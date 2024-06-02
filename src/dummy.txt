@@ -1,0 +1,262 @@
+// import React, { useState, useEffect } from 'react';
+// import './App.css';
+
+// const ImageSlider = ({ images }) => {
+//   const [currentIndex, setCurrentIndex] = useState(0);
+
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+//     }, 3000); // Change image every 3 seconds
+
+//     return () => clearInterval(timer);
+//   }, [images.length]);
+
+//   const handleNext = () => {
+//     setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+//   };
+
+//   const handlePrev = () => {
+//     setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+//   };
+
+//   return (
+//     <div className="slider-container">
+//       <div
+//         className="slider-image"
+//         style={{ backgroundImage: `url(${images[currentIndex]})` }}
+//       />
+//       <button onClick={handlePrev} className="slider-button prev">
+//         &#10094;
+//       </button>
+//       <button onClick={handleNext} className="slider-button next">
+//         &#10095;
+//       </button>
+//     </div>
+//   );
+// };
+
+// const App = () => {
+//   const images = [
+//     '/assets/image1.jpg',
+//     '/assets/image2.jpg',
+//     '/assets/image3.jpg',
+//     // Add more image paths as needed
+//   ];
+
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <h1>Welcome to My Homepage</h1>
+//       </header>
+//       <main className="App-main">
+//         <ImageSlider images={images} />
+//       </main>
+//       <footer className="App-footer">
+//         <p>1234 React Street, JS City, Code Country</p>
+//         <p>&copy; 2024 Your Name. All rights reserved.</p>
+//       </footer>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
+// import React, { useState, useEffect } from 'react';
+// import './App.css';
+
+// const ImageSlider = ({ images }) => {
+//   const [currentIndex, setCurrentIndex] = useState(0);
+
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+//     }, 3000); // Change image every 3 seconds
+
+//     return () => clearInterval(timer);
+//   }, [images.length]);
+
+//   const handleNext = () => {
+//     setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+//   };
+
+//   const handlePrev = () => {
+//     setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+//   };
+
+//   return (
+//     <div className="slider-container">
+//       <div
+//         className="slider-image"
+//         style={{ backgroundImage: `url(${images[currentIndex]})` }}
+//       />
+//       <button onClick={handlePrev} className="slider-button prev">
+//         &#10094;
+//       </button>
+//       <button onClick={handleNext} className="slider-button next">
+//         &#10095;
+//       </button>
+//     </div>
+//   );
+// };
+
+// const InquiryForm = () => {
+//   return (
+//     <div className="inquiry-form">
+//       <h2>Contact Us</h2>
+//       <form>
+//         <div className="form-group">
+//           <label htmlFor="name">Name</label>
+//           <input type="text" id="name" name="name" required />
+//         </div>
+//         <div className="form-group">
+//           <label htmlFor="email">Email</label>
+//           <input type="email" id="email" name="email" required />
+//         </div>
+//         <div className="form-group">
+//           <label htmlFor="message">Message</label>
+//           <textarea id="message" name="message" rows="5" required></textarea>
+//         </div>
+//         <button type="submit">Submit</button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// const App = () => {
+//   const images = [
+//     '/assets/image1.jpg',
+//     '/assets/image2.jpg',
+//     '/assets/image3.jpg',
+//     // Add more image paths as needed
+//   ];
+
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <h1>Welcome to My Homepage</h1>
+//       </header>
+//       <main className="App-main">
+//         <ImageSlider images={images} />
+//         <InquiryForm />
+//       </main>
+//       <footer className="App-footer">
+//         <p>1234 React Street, JS City, Code Country</p>
+//         <p>&copy; 2024 Your Name. All rights reserved.</p>
+//       </footer>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
+import React, { useState, useEffect } from 'react';
+import './App.css';
+
+const ImageSlider = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+  };
+
+  return (
+    <div className="slider-container">
+      <div
+        className="slider-image"
+        style={{ backgroundImage: `url(${images[currentIndex]})` }}
+      />
+      <button onClick={handlePrev} className="slider-button prev">
+        &#10094;
+      </button>
+      <button onClick={handleNext} className="slider-button next">
+        &#10095;
+      </button>
+    </div>
+  );
+};
+
+const InquiryForm = () => {
+  return (
+    <div className="inquiry-form">
+      <h2>Contact Us</h2>
+      <form>
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div className="form-group">
+          <label htmlFor="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+};
+
+const App = () => {
+  const images = [
+    '/assets/image1.jpg',
+    '/assets/image2.jpg',
+    '/assets/image3.jpg',
+    // Add more image paths as needed
+  ];
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>Welcome to My Homepage</h1>
+      </header>
+      <main className="App-main">
+        <ImageSlider images={images} />
+        <InquiryForm />
+      </main>
+      <footer className="App-footer">
+        <p>1234 React Street, JS City, Code Country</p>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+};
+
+export default App;
+
+
+
+
+const images = [
+    '/assets/image1.jpg',
+    '/assets/image2.jpg',
+    '/assets/image3.jpg',
+    '/assets/image4.jpg',
+    '/assets/image5.jpg',
+    '/assets/image6.jpg',
+    '/assets/image7.jpg',
+    '/assets/image8.jpg',
+    '/assets/image9.jpg',
+    '/assets/image10.jpg',
+    '/assets/image11.jpg',
+    '/assets/image12.jpg',
+    '/assets/image13.jpg',
+    '/assets/image14.jpg',
+    // Add more image paths as needed
+  ];
